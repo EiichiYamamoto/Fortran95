@@ -1,0 +1,22 @@
+PROGRAM HOKAN
+! ラグランジェ補完
+OPEN(1,FILE='dat.txt') 
+! "dat.txt"へ計算結果を出力           
+Write(6,*)'x0,y0,x1,y1,x2,y2 ?'
+! それぞれ値に何を入力するか求める。
+read(5,*) x0,y0,x1,y1,x2,y2　　　　
+! 値を読み取る。
+Do i=1,41
+
+x=(i-1)*0.1
+R0=(x-x1)*(x-x2)/((x0-x1)*(x0-x2))
+R1=(x-x0)*(x-x2)/((x1-x0)*(x1-x2))
+R2=(x-x0)*(x-x1)/((x2-x0)*(x2-x1))
+y=y0*R0+y1*R1+y2*R2
+write(1,*) x,y
+! "dat.txt"へ計算結果を出力
+Write(6,*) x,y　　　　　　　　　　
+! 画面上に計算結果を出力
+end do
+end　　　　　　　　　　　　　　　　
+! おわり
