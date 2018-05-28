@@ -1,0 +1,9 @@
+PROGRAM TEMP
+! セ氏から絶対温度へ換算
+KER=273
+Write(6,*)'K ?'
+Read(5,*)K
+Write(6,*)'ONDO NO KEISAN'
+K=KER+K
+Write(6,*)'K=',K
+END
